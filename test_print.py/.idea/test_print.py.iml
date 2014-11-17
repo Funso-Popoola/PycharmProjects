@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="ArduinoTraffic" />
+    <orderEntry type="module" module-name="AyoGame" />
+    <orderEntry type="module" module-name="IEEEprep" />
+    <orderEntry type="module" module-name="pythonWorks" />
+    <orderEntry type="module" module-name="LinkedList" />
+    <orderEntry type="module" module-name="IEEEeight" />
+  </component>
+</module>
+

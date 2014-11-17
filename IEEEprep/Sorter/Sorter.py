@@ -114,9 +114,47 @@ class Sorter():
         self.list[j] = self.list[i]
         self.list[i] = temp
 
+    def heap_sort(self):
+        heap_size = len(self.list) - 1
+        def parent(i):
+            return i / 2
+
+        def left(i):
+            return 2 * i
+
+        def right(i):
+            return 2 * i + 1
+
+        def max_heapify(arr, i):
+            l = left(i)
+            r = right(i)
+            if l <= heap_size and arr[l] > arr[i]:
+                largest = l
+            else:
+                largest = i
+            if r <= heap_size and arr[r] > arr[largest]:
+                largest = r
+            if not largest == i:
+                arr[i] , arr[largest] = arr[largest], arr[i]
+                max_heapify(arr, largest)
+
+        def build_max_heap(arr):
+            global heap_size
+            heap_size = len(arr) - 1
+            for i in range(((len(arr) - 1) / 2), -1, -1):
+                max_heapify(arr, i)
+
+        build_max_heap(self.list)
+        for i in range(len(self.list) - 1, 0, -1):
+            self.list[0], self.list[i] = self.list[i], self.list[0]
+            heap_size -= 1
+            max_heapify(self.list, 0)
 
 
-myList = [13, 2, 23, 1, 5]
+
+
+
+myList = [13, 2, 2, 1, 5]
 sorter = Sorter(myList)
 sorter.quick_sort(0, 4)
 print sorter.list

@@ -31,13 +31,23 @@ class BinTree():
         print(root.value)
 
     def insert(self, node):
+
         pass
 
     def remove(self, node):
         pass
 
     def find(self, node):
-        pass
+        curr = self.root
+        while not curr.get_value() == node.get_value():
+            if curr == None:
+                return None
+            elif node.get_value() > curr.get_value():
+                curr = curr.get_right_child()
+            elif node.get_value() < curr.get_value():
+                curr = curr.get_left_child()
+
+        return curr
 
 
 
